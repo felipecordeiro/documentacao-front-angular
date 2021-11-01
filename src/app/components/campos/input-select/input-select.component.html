@@ -1,0 +1,12 @@
+<div [formGroup]="formGroup">
+    <mat-form-field>
+        <mat-select [placeholder]="titulo" [formControlName]="controlName">
+            <mat-option *ngFor="let opcao of opcoes" [value]="opcao">{{opcao}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'required')">Campo obrigatório</mat-error>
+    </mat-form-field>
+    <button mat-button *ngIf="formControl.value" matSuffix mat-icon-button aria-label="Clear"
+        (click)="formControl.reset()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
