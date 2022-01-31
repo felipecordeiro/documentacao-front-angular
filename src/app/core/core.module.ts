@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponentModule } from './components/footer/footer.component.module';
+import { HeaderComponentModule } from './components/header/header.component.module';
 
 @NgModule({
     imports: [
@@ -12,7 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        HeaderComponentModule,
+        FooterComponentModule
     ],
     exports: [
         BrowserModule,
@@ -20,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        HeaderComponentModule,
+        FooterComponentModule
     ],
     declarations: [],
     providers: [],
