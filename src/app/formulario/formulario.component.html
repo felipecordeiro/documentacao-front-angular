@@ -1,1 +1,21 @@
-<p>formulario works!</p>
+<h1>Formulário</h1>
+
+<form [formGroup]="form">
+    <div class="container">
+        <div class="item">
+            <dfa-input-text titulo="Nome" controlName="nome" [formGroup]="form"></dfa-input-text>
+        </div>
+        <div class="item">
+            <dfa-input-number titulo="Idade" controlName="idade" [formGroup]="form"></dfa-input-number>
+        </div>
+        <div class="item">
+            <dfa-input-date titulo="Data de nascimento" controlName="dataNascimento" [formGroup]="form">
+            </dfa-input-date>
+        </div>
+        <div class="item">
+            <dfa-input-textarea titulo="Observação" controlName="observacao" [formGroup]="form"></dfa-input-textarea>
+        </div>
+    </div>
+</form>
+<p>{{form.value | json}}</p>
+<button (click)="salvar()">Salvar</button>

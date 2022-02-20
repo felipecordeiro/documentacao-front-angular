@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponentModule } from './components/footer/footer.component.module';
 import { HeaderComponentModule } from './components/header/header.component.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { HeaderComponentModule } from './components/header/header.component.modu
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
+        MaterialModule,
         HeaderComponentModule,
         FooterComponentModule
     ],
@@ -25,6 +27,7 @@ import { HeaderComponentModule } from './components/header/header.component.modu
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
+        MaterialModule,
         HeaderComponentModule,
         FooterComponentModule
     ],
