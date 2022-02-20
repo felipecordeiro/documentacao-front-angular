@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InputsComponent } from './inputs/inputs.component';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { FormularioModule } from './formulario/formulario.module';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputsComponent,
     HomeComponent
   ],
   imports: [
     CoreModule,
+    FormularioModule,
     AppRoutingModule,
   ],
   providers: [],
