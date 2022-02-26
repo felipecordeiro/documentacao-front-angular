@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
+import { MaterialModule } from '../../material.module';
 
 import { HeaderComponent } from './header.component';
 
 @NgModule({
-    imports: [],
+    imports: [
+        MaterialModule
+    ],
     exports: [HeaderComponent],
     declarations: [HeaderComponent],
     providers: [],
