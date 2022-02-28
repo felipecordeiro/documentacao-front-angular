@@ -3,3 +3,45 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+// 12 column grid system
+
+// small
+@for $i from 1 through 12 {
+    $w: ($i / 12) * 100%;
+    .sm-#{$i} {flex-basis: $w;}
+}
+
+// medium
+@media screen and (min-width: 768px) {
+
+    @for $i from 1 through 12 {
+        $w: ($i / 12) * 100%;
+        .md-#{$i} {flex-basis: $w;}
+    }
+}
+
+// large
+@media screen and (min-width: 1024px) {
+    
+    @for $i from 1 through 12 {
+        $w: ($i / 12) * 100%;
+        .lg-#{$i} {flex-basis: $w;}
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    padding: 0 2vw;
+    margin: 0 0 .75rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+
