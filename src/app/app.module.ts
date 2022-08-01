@@ -6,16 +6,18 @@ import { CoreModule } from './core/core.module';
 import { FormularioModule } from './formulario/formulario.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { ExcelModule } from './excel/excel.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CoreModule,
     FormularioModule,
+    ExcelModule,
     AppRoutingModule,
   ],
   providers: [
