@@ -24,6 +24,7 @@
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.34",
     "ngx-papaparse": "^5.1.0",
+    "pdfmake": "^0.2.5",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
     "xlsx": "^0.18.5",
