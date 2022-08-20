@@ -14,6 +14,20 @@ export class BaseService<T> {
 
   }
 
+//   get(resource: string, filtro?: any, showLoader = false): Observable<any> {
+//     let urlInfo = new UrlInfo(
+//     new Resources(`${ENV.endpoints().app.rest}`).resource(resource).queryParams(StringUtil.gerarQueryFiltro(filtro)).build(),
+//     {},
+//     MetodoHttp.GET,
+//     null,
+//     "json"
+//   );
+//   console.log(urlInfo);
+//   return this.sincronizadorService.executaSincrono(
+//     urlInfo, showLoader, false,
+//   );
+// }
+
   getObjects(): Observable<T[]> {
     return this.http.get<T[]>(`${this.URL}`)
       .pipe(
