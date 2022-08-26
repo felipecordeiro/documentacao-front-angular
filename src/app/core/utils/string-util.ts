@@ -22,6 +22,7 @@ export abstract class StringUtil {
                 return true;
             else return false;
         }
+        return false
     }
 
     static isTemLetraPrimeiroCaractere(texto: String, letra: string) {
@@ -31,6 +32,7 @@ export abstract class StringUtil {
                 return true;
             else return false;
         }
+        return false
     }
 
     static query(key, value) {
