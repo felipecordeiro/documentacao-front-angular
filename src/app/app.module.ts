@@ -7,6 +7,7 @@ import { FormularioModule } from './formulario/formulario.module';
 import { AppRoutingModule } from './app-routing.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { ExcelModule } from './excel/excel.module';
+import { PrimengModule } from './primeng/primeng.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ExcelModule } from './excel/excel.module';
     CoreModule,
     FormularioModule,
     ExcelModule,
+    PrimengModule,
     AppRoutingModule,
   ],
   providers: [
