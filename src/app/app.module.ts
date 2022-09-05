@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { ExcelModule } from './excel/excel.module';
 import { PrimengModule } from './primeng/primeng.module';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PrimengModule } from './primeng/primeng.module';
     ExcelModule,
     PrimengModule,
     AppRoutingModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}
