@@ -9,6 +9,9 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { ExcelModule } from './excel/excel.module';
 import { PrimengModule } from './primeng/primeng.module';
 import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { StoreModule } from '@ngrx/store';
     ExcelModule,
     PrimengModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}

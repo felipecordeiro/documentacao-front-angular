@@ -1,5 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { UIChart } from 'primeng/chart';
+import { ChartModel } from '../../chart.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ import { UIChart } from 'primeng/chart';
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
 
-  data: any;
+  data: ChartModel;
 
   chartOptions: any;
 

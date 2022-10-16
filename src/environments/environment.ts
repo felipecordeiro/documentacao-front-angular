@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  DEV_API: ''
+  devApi: '',
+  coincapApi: 'https://api.coincap.io/v2'
 };
 
 /*

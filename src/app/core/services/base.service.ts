@@ -10,7 +10,7 @@ export class BaseService<T> {
 
   constructor(protected http: HttpClient, protected endpoint: string) {
 
-    this.URL = `${environment.DEV_API}${this.endpoint}`
+    this.URL = `${environment.devApi}${this.endpoint}`
 
   }
 

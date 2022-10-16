@@ -1,0 +1,9 @@
+<p-card>
+    <p-dropdown [options]="opcoesFiltro" (onChange)="filtroChange($event)"></p-dropdown>
+
+    <p-chart #chartMaxSupply title="maxSupply" type="pie" [data]="dataMaxSupply" width="200"></p-chart>
+    <p-chart #chartMarketCapUsd title="marketCapUsd" type="pie" [data]="dataMarketCapUsd" width="200"></p-chart>
+    <p-chart #chartPriceUsd title="priceUsd" type="pie" [data]="dataPriceUsd" width="200"></p-chart>
+    <p-chart #chartChangePercent24Hr title="changePercent24Hr" type="pie" [data]="dataChangePercent24Hr" width="200"></p-chart>
+
+</p-card>
