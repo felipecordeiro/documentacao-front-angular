@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { combineLatest, distinctUntilChanged, exhaustMap, forkJoin, map, Observable, of, take, tap } from 'rxjs';
+import { combineLatest, delay, delayWhen, distinctUntilChanged, exhaustMap, forkJoin, map, Observable, of, skip, take, tap, withLatestFrom } from 'rxjs';
 import { ICarteira } from '../core/models/ICarteira';
 import { ICliente } from '../core/models/ICliente';
 import { IState } from '../core/models/IState';
@@ -20,7 +20,7 @@ export class TestesNgrxComponent implements OnInit {
   codigoCarteira$: Observable<number>
 
   clienteCount = 1
-  carteiraCount = 1
+  carteiraCount = 10
 
   constructor(private store: Store<IState>) {
     
@@ -35,11 +35,13 @@ export class TestesNgrxComponent implements OnInit {
     //     return { codigoCliente, codigoCarteira }
     //   })
     // )
-    this.codigoCarteira$ = this.store.select(selectCodigoCarteira).pipe(
-      exhaustMap(() => this.store.select(selectCodigoCliente).pipe(take(1)))
-    )
-    this.dados$ = combineLatest([this.store.select(selectCodigoCliente), this.codigoCarteira$])
+    // this.codigoCarteira$ = this.store.select(selectCodigoCliente).pipe(
+    //   exhaustMap(() => this.store.select(selectCodigoCarteira).pipe(take(1)))
+    // )
+    this.dados$ = this.store.select(selectCodigoCliente)
     .pipe(
+      delay(3000),
+      withLatestFrom(this.store.select(selectCodigoCarteira)),
       tap(([codigoCliente, codigoCarteira]) => console.log(`cliente: ${codigoCliente} carteira: ${codigoCarteira}`)),
       map(([codigoCliente, codigoCarteira]) => {
         return { codigoCliente, codigoCarteira }
@@ -99,9 +101,9 @@ export class TestesNgrxComponent implements OnInit {
   }
 
   mudaCarteiraSelecionadaAoMudarCliente(){
-    this.selecionarCliente2()
+    this.aumentaCliente()
     setTimeout(() => {
-      this.selecionarCarteira2()
+      this.aumentaCarteira()
     }, 2000);
   }
 }
