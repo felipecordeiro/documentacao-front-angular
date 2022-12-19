@@ -12,21 +12,25 @@ import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { carteiraReducer } from './core/store/reducers/carteira.reducer';
+import { clienteReducer } from './core/store/reducers/cliente.reducer';
+import { TestesNgrxModule } from './testes-ngrx/testes-ngrx.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     CoreModule,
     FormularioModule,
     ExcelModule,
+    TestesNgrxModule,
     PrimengModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ cliente: clienteReducer, carteira: carteiraReducer }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [

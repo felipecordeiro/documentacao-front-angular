@@ -1,0 +1,13 @@
+<button (click)="selecionarCliente1()">Selecionar cliente 1</button>
+<button (click)="selecionarCliente2()">Selecionar cliente 2</button>
+<button (click)="aumentaCliente()">Aumenta Cliente</button>
+<br>
+<button (click)="selecionarCarteira1()">Selecionar carteira 1</button>
+<button (click)="selecionarCarteira2()">Selecionar carteira 2</button>
+<button (click)="aumentaCarteira()">Aumenta Carteira</button>
+<br>
+<button (click)="mudaCarteiraSelecionadaAoMudarCliente()">mudaCarteiraSelecionadaAoMudarCliente</button>
+<br>
+<div>{{dados$ | async | json}}</div>
+<br>
+<div>{{codigoCarteira$ | async | json}}</div>
